@@ -20,14 +20,15 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    imgFishy = loadImage("fish-png"); // load the image into the program
+    // load background
+    imgBackground = loadImage("../Beach.jpeg");  
+    // load images into the program
+    imgFishy = loadImage("../fish-png"); 
     //resize fish
     imgFishy.resize(imgFishy.width/4,imgFishy.height/4);
 
     // load shark
-    imgSharky = loadImage("shark.png");
-
-    imgBackground = loadImage("Beach.jpeg")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              .jpeg");
+    imgSharky = loadImage("../shark.png);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           .jpeg");
   }
 
   /**
