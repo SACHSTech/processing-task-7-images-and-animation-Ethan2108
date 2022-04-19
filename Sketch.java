@@ -17,28 +17,21 @@ public class Sketch extends PApplet {
   double yFIshy = 50;
 	
   public void settings() {
-    size(400, 400);
+
+    size(500, 500);
   }
 
   public void setup() {
     
     // load images
-    Background = loadImage("../Beach.jpeg");  
-    // load fish
-    Fishy = loadImage("../fish-png.png"); 
-    // resize fish
-    Fishy.resize(Fishy.width/4,Fishy.height/4);
-
-    // load shark
-    Sharky = loadImage("../shark.png);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           .jpeg");
+    Background = loadImage("../Biscayne_underwater.jpg");
+    Fishy = loadImage("../fish.png");
+    Sharky = loadImage("../Shark.png");
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
 	  background(0, 255, 238);
-    image(imgBackground, 255, 238);
+    image(Background, 255, 238);
   
   // define other methods down here.
 }}
