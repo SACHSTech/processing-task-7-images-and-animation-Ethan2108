@@ -3,32 +3,33 @@ import processing.core.PImage;
 
 public class Sketch extends PApplet {
 	
+  // declare variables
+  PImage imgBackground;
   PImage imgFishy;
   PImage imgSharky;
-  PImage imgBackground;
-  //
+
+  float x = 0;
+  float y = 0;
+  float xSpeed = 5;
+  float ySpeed = 4;
+  float speed = 5;
+  double xFishy = 1;
+  double yFIshy = 50;
 	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
   public void settings() {
     size(400, 400);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
   public void setup() {
     // load background
     imgBackground = loadImage("../Beach.jpeg");  
-    // load images into the program
+    // load fish
     imgFishy = loadImage("../fish-png"); 
-    //resize fish
+    // resize fish
     imgFishy.resize(imgFishy.width/4,imgFishy.height/4);
 
     // load shark
-    imgSharky = loadImage("../shark.png);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           .jpeg");
+    imgSharky = loadImage("../shark.png");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           .jpeg");
   }
 
   /**
