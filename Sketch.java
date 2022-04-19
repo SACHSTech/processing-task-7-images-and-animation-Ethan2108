@@ -37,7 +37,7 @@ public class Sketch extends PApplet {
   public void draw() {
 
     // draw images and background
-    image(Background, 255, 238);
+    image(Background, 0, 0);
     image(Fishy, x, y);
 
     // speed of fish 
@@ -53,16 +53,18 @@ public class Sketch extends PApplet {
       ySpeed *= -1;
     }
 
-    // non-linear path for shark
-    float SharkyX = speed;
-    float SharkyY = (float)(0.0013 * (Math.pow( SharkyX - width/2, 2))) + 100;
+    // non-linear path for Fish
+    float FishyX = speed;
+    float FishyY = (float)(0.0013 * (Math.pow(FishyX - width/2, 2))) + 100;
 
-    if ((SharkyX + 100) > width) {
+    if ((FishyX + 100) > width) {
 
-      SharkyY = 0;
+      FishyY = 0;
     
     }
   
   // draw shark
-  image(Sharky, (float)(SharkyX), (float)(SharkyY));
-}}
+  image(Sharky, 0, 0);
+
+  }
+}
