@@ -27,11 +27,42 @@ public class Sketch extends PApplet {
     Background = loadImage("../Biscayne_underwater.jpg");
     Fishy = loadImage("../fish.png");
     Sharky = loadImage("../Shark.png");
+
+    // resize images
+    Fishy.resize(100,100);
+    Sharky.resize(200,200);
+
   }
 
   public void draw() {
-	  background(0, 255, 238);
+
+    // draw images and background
     image(Background, 255, 238);
+    image(Fishy, x, y);
+
+    // speed of fish 
+    x += xSpeed;
+    y += ySpeed;
+
+    // collisison detection for fish 
+    if (x < 0 || (x + 100) > width) {
+      xSpeed *= -1;
+    }
+
+    if (y < 0  || (y + 100) > height) {
+      ySpeed *= -1;
+    }
+
+    // non-linear path for shark
+    float SharkyX = speed;
+    float SharkyY = (float)(0.0013 * (Math.pow( SharkyX - width/2, 2))) + 100;
+
+    if ((SharkyX + 100) > width) {
+
+      SharkyY = 0;
+    
+    }
   
-  // define other methods down here.
+  // draw shark
+  image(Sharky, (float)(SharkyX), (float)(SharkyY));
 }}
