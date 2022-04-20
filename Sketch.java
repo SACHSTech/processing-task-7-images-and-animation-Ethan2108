@@ -8,6 +8,7 @@ public class Sketch extends PApplet {
   public PImage Fishy;
   public PImage Sharky;
 
+  // float values for the fish
   float x = 0;
   float y = 0;
   float xSpeed = 5;
@@ -15,6 +16,15 @@ public class Sketch extends PApplet {
   float speed = 5;
   double xFishy = 1;
   double yFIshy = 50;
+
+  // float values for the circle
+  float floatCircleX = 100;
+  float floatCircleY = width/10;
+  float floatCircleSpeedX = 2;
+  float floatCircleSpeedY = 2;
+
+  // float value for the circle movement
+  float floatCircleMovement;
 	
   public void settings() {
 
@@ -62,9 +72,24 @@ public class Sketch extends PApplet {
       FishyY = 0;
     
     }
+
+    // draws the circle
+    ellipse (floatCircleX, floatCircleY, 100, 100);
+
+    // moves the circle along a cosine wave
+    floatCircleX += (float)(Math.cos(floatCircleMovement)) + floatCircleSpeedX;
+    floatCircleY += (float)(Math.cos(floatCircleMovement)) + floatCircleSpeedY;
+
+    // if statements if the circle comes too close to the edges
+    if (floatCircleX < 0 + 10 || floatCircleX > width - 10); {
+    floatCircleSpeedX *= -1;
+  }
+
+    if (floatCircleY < 0 + 10 || floatCircleY > height - 10) {
+    floatCircleSpeedY *= -1;
+  }
   
   // draw shark
   image(Sharky, 0, 0);
 
-  }
-}
+}}
