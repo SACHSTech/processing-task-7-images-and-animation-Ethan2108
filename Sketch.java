@@ -28,7 +28,7 @@ public class Sketch extends PApplet {
 	
   public void settings() {
 
-    size(500, 500);
+    size(6000, 6000);
   }
 
   public void setup() {
@@ -54,7 +54,7 @@ public class Sketch extends PApplet {
     x += xSpeed;
     y += ySpeed;
 
-    // collisison detection for fish 
+    // collision detection for fish 
     if (x < 0 || (x + 100) > width) {
       xSpeed *= -1;
     }
